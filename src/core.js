@@ -15,6 +15,20 @@
 				return db.version;
 			},
 
+			// Changes database version
+			changeVersion: function(sqls, fromVersion, toVersion, onErrorTx, onSuccessChange) {
+				db.changeVersion(fromVersion, toVersion, function(tx) {
+					for (var index = 0; index < sqls.length; ++index) {
+						tx.executeSql(sqls[index]);
+					}
+				}, function(err) {
+					onErrorTx(err);
+				}, function () {
+					onSuccessChange();
+				});
+
+			},
+
 			// Query the database in a transaction
 			query: function (sqls) {
 
