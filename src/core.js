@@ -6,7 +6,7 @@
 
 		// Open database
 		var
-		db = context.openDatabase && context.openDatabase(name, ver || '1.0', desc || name, size || 5e6, cb),
+		db = context.openDatabase && context.openDatabase(name, ver, desc || name, size || 5e6, cb),
 
 		// Returned object
 		ret = db && {
