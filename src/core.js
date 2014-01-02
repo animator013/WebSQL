@@ -10,6 +10,11 @@
 
 		// Returned object
 		ret = db && {
+			// Gets current database version
+			getVersion: function () {
+				return db.version;
+			},
+
 			// Query the database in a transaction
 			query: function (sqls) {
 
