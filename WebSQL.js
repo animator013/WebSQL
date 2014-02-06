@@ -39,7 +39,7 @@
 					queries = isArray(sqls) ? sqls : arguments;
 
 				// Create transaction for all queries
-				ret.rawTx(function (tx) {
+				ret.rawTxRW(function (tx) {
 					var dfSql = pub.Deferred(),
 						sql, args, parts,
 						i, iLen, j, jLen,
