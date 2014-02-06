@@ -125,10 +125,14 @@
 
 
 			// Runs a transaction manually on database
-			rawTx: function (fn) {
+			rawTxRW: function (fn) {
 				db.transaction(fn);
 			},
 
+			// Runs a read transaction manually on database
+			rawTxR: function (fn) {
+				db.readTransaction(fn);
+			},
 
 			// Returns the names of the tables in the database
 			getTableNames: function () {
